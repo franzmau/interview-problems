@@ -6,21 +6,18 @@ import java.util.List;
 
 public class InsertElementLinkedList {
 
-    private static class Node {
-
-        public Node next = null;
-        public Node previous = null;
-        public Object data;
-
-        public Node() {
-        }
-
-        public Node(Node next, Object data) {
-            this.previous = this.next;
-            this.next = next;
-            this.data = data;
-        }
-    }
+    /**
+     * Inserting an element to a classic linked list in order to verify the understanding of data structures. This element
+     * must be inserted in a desired position.
+     * The creation of the node class is a must and has to be coded.
+     *
+     * In case the position the node wants to be inserted is out of bounds, it must be specified.
+     *
+     * @param head - Beginning of the linked list.
+     * @param data - Data to be inserted for verifying purposes.
+     * @param iPosition - Position the node will be inserted
+     * @return
+     */
 
     private static Node insertElement(Node head, String data, int iPosition){
         if (head == null){
@@ -56,6 +53,23 @@ public class InsertElementLinkedList {
         return head;
     }
 
+
+    private static class Node {
+
+        public Node next = null;
+        public Node previous = null;
+        public Object data;
+
+        public Node() {
+        }
+
+        public Node(Node next, Object data) {
+            this.previous = this.next;
+            this.next = next;
+            this.data = data;
+        }
+    }
+
     public static void main(String[] args) {
         List<Node> nodeList = new ArrayList<Node>();
 
@@ -68,5 +82,8 @@ public class InsertElementLinkedList {
             head = head.next;
         } while(head != null);
     }
+
+
+
 
 }
